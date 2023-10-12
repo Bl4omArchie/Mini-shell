@@ -8,10 +8,12 @@
 #include <string.h>
 #include <assert.h>
 #include <unistd.h>
+#include <dirent.h>
 
 struct Shell {
     bool running;
     int line_number;
+    char current_directory[70];
     char * buffer;
     size_t buffer_size;
 };
