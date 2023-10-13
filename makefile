@@ -1,14 +1,24 @@
-SRC_C=shell.c StringVector.c
-OBJ=${SRC_C:.c=.o}
-CFLAGS= -g -std=c11 -Wall -Wextra -pedantic -D_XOPEN_SOURCE=700
+CC = gcc
+SRC_DIR = src
+INCLUDE_DIR = includes
+CMD_DIR = cmd
 
-all: myshell
+CFLAGS = -I$(INCLUDE_DIR)
 
-myshell: $(OBJ) main.o
-	gcc $(CFLAGS) $(OBJ) main.o -o myshell
+SOURCES = $(wildcard $(SRC_DIR)/*.c $(CMD_DIR)/*.c)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.o=%.o)
 
-%.o: %.c
-	gcc -c $(CFLAGS) $<
+EXECUTABLE = myshell
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS) main.o
+	$(CC) $(OBJECTS) main.o -o $(EXECUTABLE)
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ) main.o myshell *~
+	rm -f $(EXECUTABLE) *.o
