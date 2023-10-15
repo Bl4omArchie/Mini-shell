@@ -7,6 +7,8 @@
 #include <string.h>
 #include <sys/types.h>
 
+#include "shell.h"
+
 void execute_cmd_ls(struct Shell *s);
 
 #endif

@@ -4,7 +4,7 @@ Insipiré de mon cours de programmation système, j'ai développé un mini shell
 
 ## Compilation
 ```
-gcc main.c src/*.h src/*.c -o ./main.o
+gcc main.c includes/*.h src/*.c cmd/*.c -o ./main.o
 ./main.o
 ```
 
