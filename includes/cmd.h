@@ -10,5 +10,6 @@
 #include "shell.h"
 
 void execute_cmd_ls(struct Shell *s);
+void execute_cmd_cat(struct Shell *s, char *filename);
 
 #endif

@@ -46,7 +46,6 @@ void execute_cmd_ls(struct Shell *s) {
 
             if (counter == 0) {
                 printf ("\n");
-                free(longest_name);
                 longest_name = (char*)realloc(longest_name, strlen(entry->d_name) + 1); 
                 strcpy(longest_name, entry->d_name);
             }

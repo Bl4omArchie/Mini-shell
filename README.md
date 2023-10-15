@@ -14,6 +14,7 @@ Après avoir lancé l'exécutable vous arrivez dans le shell. Voici la liste des
 - !: ouvrir un sous-shell
 - cd: parcourir vos fichiers
 - ls: afficher les fichiers/dossiers du répertoire
+- cat: prend en paramètre un fichier et l'affiche
 - kisuisje: un whoami en français
 - clear: effacer le terminal
 - exit: sortir du shell et des sous-shell
@@ -25,6 +26,7 @@ Dans cette partie, je document les différents fichiers d'en-tête.
 
 | en-tête            | description          |
 | :------:           |:-------:             | 
-| shell.h            |header principal qui contient le shell   |  
+| shell.h            |header principal qui contient le shell    |  
+| cmd.h              |implémentation des commandes              |  
 | colors.h           |header spécial où je stock uniquement des couleurs/typos pour l'aspect esthétique|  
 | StringVector.h     |header de la gestion des commandes/tokens |    

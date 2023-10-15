@@ -73,16 +73,23 @@ void shell_execute_line(struct Shell *s){
                 printf ("cd: %s, No such file or directory", path);
         }
 
+        else if (strcmp(command, "cat") == 0) {
+            char *filename = string_vector_get(&tokens, 1);
+            if (filename == NULL)
+                printf ("cat: no file indicated");
+            else
+                execute_cmd_cat(s, filename);
+                
+        }
+
         else if (strcmp(command, "ls") == 0) 
             execute_cmd_ls(s);
-
-        
         else if (strcmp(command, "kisuisje") == 0)
             system("whoami");
         else if (strcmp(command, "clear") == 0) 
             system("clear");        
         else    
-            printf ("[!] Commande inconnue\n");
+            printf ("[!] We can't find this command \n");
     }
     string_vector_free(&tokens);
 }
