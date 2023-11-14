@@ -3,11 +3,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <stdbool.h>
 #include <string.h>
 #include <assert.h>
 #include <unistd.h>
+
+#include <sys/types.h>
+#include <sys/wait.h>
 
 struct Shell {
     bool running;

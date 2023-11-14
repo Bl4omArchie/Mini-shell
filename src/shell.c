@@ -56,11 +56,31 @@ void shell_execute_line(struct Shell *s){
             }
 
             else {
-                char *command = string_vector_get(&tokens, 1);
                 char *tmp = malloc(256*sizeof(char));
                 tmp = strjoinarray(tmp, &tokens, 1, string_vector_size(&tokens), ";");
-                printf ("command externe: %s\n", tmp);
-                free(tmp);
+                
+                char **arg;
+                arg = malloc(sizeof(char *) * (string_vector_size(&tokens)));
+
+                size_t i;
+                for (i=1; i<string_vector_size(&tokens); i++) 
+                    arg[i-1] = strdup(string_vector_get(&tokens, i));
+                arg[i] = NULL;
+
+                pid_t pid = fork();
+                if (pid == 0) {
+                    execvp(arg[0], arg);
+                    perror("execvp");
+                    exit(EXIT_FAILURE);
+                }
+                else {
+                    int status;
+                    waitpid(pid, &status, 0);
+                }
+
+                for (i=0; i<string_vector_size(&tokens); i++) 
+                    free(arg[i]);
+                free(arg);
             }
         }
 
