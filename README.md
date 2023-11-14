@@ -7,10 +7,8 @@ En prenant exemple d'un shell que j'utilise (starship.sh) je voudrais aussi rajo
 Je vais améliorer la gestion des paramètres de commandes et généraliser chaque action par des fonctions pour rendre le programme plus claire. 
 
 ## Compilation
-```
-gcc main.c includes/*.h src/*.c cmd/*.c -o ./main.o
-./main.o
-```
+Entrez la commande **make**
+Cela générera un exécutable qui s'appelle **myshell**.
 
 ## Tutoriel
 
@@ -26,7 +24,7 @@ Après avoir lancé l'exécutable vous arrivez dans le shell. Voici la liste des
 
 ## Includes
 
-Dans cette partie, je document les différents fichiers d'en-tête.
+Documentation de mes fichiers d'en-tête.
 
 | en-tête            | description          |
 | :------:           |:-------:             | 

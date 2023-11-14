@@ -81,13 +81,15 @@ void shell_execute_line(struct Shell *s){
                 execute_cmd_cat(s, filename);
                 
         }
-
         else if (strcmp(command, "ls") == 0) 
             execute_cmd_ls(s);
+
+
         else if (strcmp(command, "kisuisje") == 0)
             system("whoami");
         else if (strcmp(command, "clear") == 0) 
-            system("clear");        
+            system("clear");  
+                  
         else    
             printf ("[!] We can't find this command \n");
     }
