@@ -1,6 +1,6 @@
 # Création d'un mini shell
 
-Insipiré de mon cours de programmation système, j'ai développé un mini shell.
+Inspiré de mon cours de programmation système, j'ai développé un mini shell.
 Pour ce premier shell, mon obejectif premier est d'implémenter quelques commandes de bases pour rendre le shell utilisable. <br/>
 J'aimerais ensuite apporter un aspect esthétique avec des couleurs agréables à l'oeil et un rendu lisible. <br/> <br/>
 En prenant exemple d'un shell que j'utilise (starship.sh) je voudrais aussi rajouter des emojis en fonction des langages de programmation utilisés dans le répertoire. Je réfléchis aussi à des emojis accoler au nom d'un fichier (ex: un fichier python).
